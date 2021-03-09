@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 	set_tick_labels();
 
-	$.getJSON("questions.json").done(function(data) { 
+	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
     });
 
