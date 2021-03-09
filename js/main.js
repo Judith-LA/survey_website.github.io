@@ -72,6 +72,8 @@ $(document).ready(function() {
 
 });
 
+console.log(comments);
+console.log(comments.text);
 add_comment(0);
 
 
