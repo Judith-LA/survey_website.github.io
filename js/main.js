@@ -3,6 +3,7 @@ var output;
 var comments;
 var index;
 var i=0;
+var answers = {id: [], rate: []};
 
 function toSurvey() {
  	location.replace("survey.html");
@@ -73,4 +74,11 @@ $.getJSON("standard_1.json").done(function(data) {
         comments = data;
 	add_comment(i);
 });
+
+function next_question(){
+	answers.id.push(document.getElementById('postid').value);
+	answers.rate.push(document.getElementById(rangeslider).value);
+	i = i+1;
+	add_comment(i);
+}
 
