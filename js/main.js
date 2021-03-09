@@ -35,13 +35,13 @@ function set_tick_labels() {
 }
 
 function add_comment(i){
-	index = Object.keys(comments["postid"]);
+	index = Object.keys(comments.postid);
 	
 	var comment_id = document.getElementById("postid");
 	var comment_title = document.getElementById("title");
 	var comment_text = document.getElementById("text");
 
-	comment_id.value = comments["postid"][index[i]];
+	comment_id.value = comments.postid[index[i]];
 
 	var title = comments["title"][index[i]];
 	if (title==null){
