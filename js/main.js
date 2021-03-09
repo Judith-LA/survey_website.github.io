@@ -75,6 +75,37 @@ $.getJSON("standard_1.json").done(function(data) {
 	add_comment(i);
 });
 
+function loadIndex(){
+	var parameters = location.search.substring(1).split("&");
+	
+	if (parameters != null){
+		var temp = parameters[0].split("=");
+		document.getElementById("info").name = unescape(temp[0]);
+		document.getElementById("info").value = unescape(temp[1]);
+	}
+}
+
+function display_info(){
+	rangeslider = document.getElementById("rangeslider");
+	output = document.getElementById("demo");
+	output.innerHTML = rangeslider.value;
+
+	rangeslider.oninput = function getSliderValue() {
+		output.innerHTML = this.value;
+	}
+
+	set_tick_labels();
+
+	var parameters = location.search.substring(1).split("&");
+	var temp = parameters[0].split("=");
+	var data_file = "standard_" + unescape(temp[1]) + ".json";
+
+	$.getJSON(data_file).done(function(data) { 
+	    comments = data;
+	    add_comment(i);
+	});
+}
+
 function next_question(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.getElementById('rangeslider').value);
