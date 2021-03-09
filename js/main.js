@@ -86,7 +86,7 @@ function displayInfo(){
 	});
 }
 
-function next_question(){
+function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.getElementById('rangeslider').value);
 	if (i >= 8){
