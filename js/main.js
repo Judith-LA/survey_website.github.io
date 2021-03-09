@@ -68,11 +68,11 @@ $(document).ready(function() {
 
 	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
+	console.log(comments.title);
     	});
 
 });
 
-console.log(comments);
 console.log(comments.text);
 add_comment(0);
 
