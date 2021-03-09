@@ -68,13 +68,10 @@ $(document).ready(function() {
 
 	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
-	console.log(comments.title);
+	add_comment(0);
     	});
 
 });
-
-console.log(comments.text);
-add_comment(0);
 
 
 
