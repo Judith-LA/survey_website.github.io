@@ -90,8 +90,8 @@ function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.getElementById('rangeslider').value);
 	if (i >= 8){
-		document.getElementById('next').display = 'none';
-		document.getElementById('end_survey').dispaly = 'block';
+		document.getElementById('next').style.display = 'none';
+		document.getElementById('end_survey').style.display = 'block';
 	}
 	i = i+1;
 	add_comment(i);
