@@ -10,7 +10,7 @@ function toSurvey() {
 }
 
 function toInstructions() {
-	location.replace("survey_instructions.html");
+	location.replace("index.html");
 }
 
 
@@ -78,7 +78,11 @@ $.getJSON("standard_1.json").done(function(data) {
 function next_question(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.getElementById('rangeslider').value);
-	i = i+1;
-	add_comment(i);
+	if (i<9){
+		i = i+1;
+		add_comment(i);
+	} else {
+		location.replace("survey_end.html");
+	}
 }
 
