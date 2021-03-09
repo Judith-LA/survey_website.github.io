@@ -11,14 +11,17 @@
 	<script src="js/main.js"></script>
 </head>
 
-<body>
+<body onload="loadIndex()">
 	<header>
 		<h1> Survey Instructions </h1>
 	</header>
 
 
 	Blablabla
-	<button onclick="toSurvey()">Understood</button>
+	<form action="survey.html">
+		<input type="hidden" id="info" name="set"  value="1" />
+    		<input type="submit" value="Understood">
+	</form>
 
 
 </body>
