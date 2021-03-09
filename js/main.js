@@ -55,26 +55,6 @@ function add_comment(i){
 	comment_text.textContent = comments["text"][index[i]];
 }
 
-
-$(document).ready(function() {
-
-	rangeslider = document.getElementById("rangeslider");
-	output = document.getElementById("demo");
-	output.innerHTML = rangeslider.value;
-
-	rangeslider.oninput = function getSliderValue() {
-		output.innerHTML = this.value;
-	}
-
-	set_tick_labels();
-
-});
-
-$.getJSON("standard_1.json").done(function(data) { 
-        comments = data;
-	add_comment(i);
-});
-
 function loadIndex(){
 	var parameters = location.search.substring(1).split("&");
 	
@@ -85,7 +65,7 @@ function loadIndex(){
 	}
 }
 
-function display_info(){
+function displayInfo(){
 	rangeslider = document.getElementById("rangeslider");
 	output = document.getElementById("demo");
 	output.innerHTML = rangeslider.value;
