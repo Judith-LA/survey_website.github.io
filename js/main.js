@@ -77,7 +77,7 @@ $.getJSON("standard_1.json").done(function(data) {
 
 function next_question(){
 	answers.id.push(document.getElementById('postid').value);
-	answers.rate.push(document.getElementById(rangeslider).value);
+	answers.rate.push(document.getElementById('rangeslider').value);
 	i = i+1;
 	add_comment(i);
 }
