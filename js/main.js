@@ -33,7 +33,7 @@ function set_tick_labels() {
 	});
 }
 
-function add_comment(int i){
+function add_comment(i){
 	var comment_id = document.getElementById("postid");
 	var comment_title = document.getElementById("title");
 	var comment_text = document.getElementById("text");
