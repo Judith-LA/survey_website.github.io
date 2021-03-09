@@ -1,7 +1,7 @@
 var rangeslider;
 var output;
 var comments;
-var keys;
+var index;
 
 function toSurvey() {
  	location.replace("survey.html");
@@ -35,22 +35,22 @@ function set_tick_labels() {
 }
 
 function add_comment(i){
-	keys = Object.keys(comments["postid"]);
+	index = Object.keys(comments["postid"]);
 	
 	var comment_id = document.getElementById("postid");
 	var comment_title = document.getElementById("title");
 	var comment_text = document.getElementById("text");
 
-	comment_id.value = comments["postid"][keys[i]];
+	comment_id.value = comments["postid"][index[i]];
 
-	var title = comments["title"][keys[i]];
+	var title = comments["title"][index[i]];
 	if (title==null){
 		comment_title.textContent = '-';
 	} else {
 		comment_title.textContent = title;
 	}
 
-	comment_text.textContent = comments["text"][keys[i]];
+	comment_text.textContent = comments["text"][index[i]];
 }
 
 
