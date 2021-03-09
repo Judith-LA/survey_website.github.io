@@ -67,7 +67,7 @@ $(document).ready(function() {
 	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
     	});
-	keys = Object.keys(comments["postid"]);
+	keys = Object.keys(comments.postid);
 	
 	add_comment(0);
 });
