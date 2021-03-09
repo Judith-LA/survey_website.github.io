@@ -1,6 +1,7 @@
 var rangeslider;
 var output;
 var comments;
+var keys;
 
 function toSurvey() {
  	location.replace("survey.html");
@@ -38,16 +39,16 @@ function add_comment(i){
 	var comment_title = document.getElementById("title");
 	var comment_text = document.getElementById("text");
 
-	comment_id.value = comments["postid"][ind[i]];
+	comment_id.value = comments["postid"][keys[i]];
 
-	var title = comments["title"][ind[i]];
+	var title = comments["title"][keys[i]];
 	if (title==null){
 		comment_title.textContent = '-';
 	} else {
 		comment_title.textContent = title;
 	}
 
-	comment_text.textContent = comments["text"][ind[i]];
+	comment_text.textContent = comments["text"][keys[i]];
 }
 
 
@@ -66,7 +67,7 @@ $(document).ready(function() {
 	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
     	});
-	ind = Object.keys(comments["postid"]);
+	keys = Object.keys(comments["postid"]);
 	
 	add_comment(0);
 });
