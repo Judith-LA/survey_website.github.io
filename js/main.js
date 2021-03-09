@@ -2,6 +2,7 @@ var rangeslider;
 var output;
 var comments;
 var index;
+var i=0;
 
 function toSurvey() {
  	location.replace("survey.html");
@@ -66,12 +67,10 @@ $(document).ready(function() {
 
 	set_tick_labels();
 
-	$.getJSON("standard_1.json").done(function(data) { 
-        comments = data;
-	add_comment(0);
-    	});
-
 });
 
-
+$.getJSON("standard_1.json").done(function(data) { 
+        comments = data;
+	add_comment(i);
+});
 
