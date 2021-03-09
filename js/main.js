@@ -69,11 +69,10 @@ $(document).ready(function() {
 	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
     	});
-	
-	add_comment(0);
+
 });
 
-
+add_comment(0);
 
 
 
