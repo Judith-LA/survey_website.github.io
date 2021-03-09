@@ -33,6 +33,23 @@ function set_tick_labels() {
 	});
 }
 
+function add_comment(int i){
+	var comment_id = document.getElementById("postid");
+	var comment_title = document.getElementById("title");
+	var comment_text = document.getElementById("text");
+
+	comment_id.value = comments["postid"][keys[i]];
+
+	var title = comments["title"][keys[i]];
+	if (title==null){
+		comment_title.textContent = '-';
+	} else {
+		comment_title.textContent = title;
+	}
+
+	comment_text.textContent = comments["text"][keys[i]];
+}
+
 
 $(document).ready(function() {
 
@@ -48,8 +65,10 @@ $(document).ready(function() {
 
 	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
-    });
-
+    	});
+	keys = Object.keys(comments["postid"]);
+	
+	add_comment(0);
 });
 
 
