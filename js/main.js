@@ -35,6 +35,8 @@ function set_tick_labels() {
 }
 
 function add_comment(i){
+	keys = Object.keys(comments["postid"]);
+	
 	var comment_id = document.getElementById("postid");
 	var comment_title = document.getElementById("title");
 	var comment_text = document.getElementById("text");
@@ -67,7 +69,6 @@ $(document).ready(function() {
 	$.getJSON("standard_1.json").done(function(data) { 
         comments = data;
     	});
-	keys = Object.keys(comments.postid);
 	
 	add_comment(0);
 });
