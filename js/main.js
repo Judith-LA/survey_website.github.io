@@ -89,11 +89,11 @@ function displayInfo(){
 function next_question(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.getElementById('rangeslider').value);
-	if (i<9){
-		i = i+1;
-		add_comment(i);
-	} else {
-		location.replace("survey_end.html");
+	if (i >= 8){
+		document.getElementById('next').hidden = 'True';
+		document.getElementById('end_survey').hidden = 'False';
 	}
+	i = i+1;
+	add_comment(i);
 }
 
