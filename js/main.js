@@ -30,7 +30,7 @@ function set_tick_labels() {
   
   		span.textContent = item;
   		span.setAttribute('class', 'tick');
-  		span.style.left = (index/5*100)+'%';
+  		span.style.left = (index/14*100-12)+'%';
   		ticks.append(span);
         
 	});
