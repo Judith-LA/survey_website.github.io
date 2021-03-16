@@ -18,13 +18,10 @@ function set_tick_labels() {
 
   var range = document.getElementById("slider");
   
-  // get the inner "ticks" div 
-  //var ticks = document.getElementById("ticks");
   var ticks = document.getElementById("ticks");
   
   var array = ["Very negative", "Negative", "Neutral", "Positive", "Very positive"]
 
-  // for item in label array:
   array.forEach(function (item, index) {
   		var span = document.createElement("SPAN");
   
@@ -47,7 +44,7 @@ function add_comment(i){
 
 	var title = comments["title"][index[i]];
 	if (title==null){
-		comment_title.textContent = '-';
+		comment_title.textContent = '';
 	} else {
 		comment_title.textContent = title;
 	}
