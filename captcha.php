@@ -12,6 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha);
     
+    header('Content-type: application/json');
+    
     console.log($recaptcha);
     
     echo $recaptcha;
