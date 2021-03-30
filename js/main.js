@@ -104,6 +104,18 @@ function endSurvey(){
 	
 	sessionStorage.setItem("rates", JSON.stringify(answers));
 	sessionStorage.setItem("surveyTime", (endDate - startDate)/1e3);
+	
+	var token = document.getElementById('recaptchaResponse').value;
+	$.ajax({
+		url: "captcha.php",
+		type: "POST",
+		data: {recaptcha_response:token},
+		success: function(result){
+			var captcha = JSON.parse(result);
+			sessionStorage.setItem("score",captcha.score);
+		},
+	});
+	
 	location.href = "survey_end.html";
 }
 
@@ -116,6 +128,9 @@ function loadRates(){
 	var seconds = Math.floor((surveyTime)%60);
 
 	document.getElementById("survey_time").textContent = hours.toString()+':'+minutes.toString()+':'+seconds.toString();
+	
+	
+	document.getElementById("score").textContent = sessionStorage.getItem("score");
 }
 
 
