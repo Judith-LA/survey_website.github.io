@@ -29,21 +29,6 @@ h2 {
 	color:#102645;
 }
 
-#centre {
-	position: fixed;
-	left: 40%;
-	right: 40%;
-	top: 30%;
-	height: 160px;
-	border-style: groove;
-	border-color: #fab600;
-	border-radius: 5px;
-	padding: 1%;
-}
-
-.box {
-	display: inline-block;
-}
 
 header {
 	color: white;
@@ -52,37 +37,40 @@ header {
 	background-color: #102645;
 }
 
-.slider {
-	-webkit-appearance: none;
-	background: #FCF3CF;
-	width: 50%;
-	height: 20px;
-	opacity: 2;
+
+.likert {
+  list-style:none;
+  width:80%;
+  margin-left: 10%;
+  padding:0 0 35px;
+  display:block;
+  border-bottom:2px solid #efefef;
 }
 
-.slider:hover{
-	opacity: 1;
+.likert li {
+  display:inline-block;
+  width:15%;
+  text-align:center;
+  vertical-align: top;
 }
 
-.slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	cursor: pointer;
-	background: #34495E  ;
-	width: 5%;
-	height: 20px;
+.likert li input[type=radio] {
+  display:block;
+  position:relative;
+  top:0;
+  left:43%;
 }
 
+.likert:last-of-type {border-bottom:0;}
+.likert:before {
+  content: '';
+  position:relative;
+  top:11px;
+  left:19%;
+  display:block;
+  background-color:#efefef;
+  height:4px;
+  width:62%;
+}
 
-.tick {
-	position: relative;
-	justify-content: center;
-}
-.tick::before {
-	content: "";
-	position: absolute;
-	top: -10px;
-	width: 1px;
-	background: gray;
-	height: 10px;
-}
 
