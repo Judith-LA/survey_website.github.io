@@ -77,7 +77,7 @@ function nextQuestion(){
 		document.getElementById('next').style.display = 'none';
 		document.getElementById('end_survey').style.display = 'block';
 	}
-	$('input[name=Options]:checked').removeAttr('checked');
+	$('input[name="Options"]:checked').removeAttr('checked');
 	i = i+1;
 	add_comment(i);
 }
