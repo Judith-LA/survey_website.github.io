@@ -52,18 +52,8 @@ function add_comment(i){
 	comment_text.textContent = comments["text"][index[i]];
 }
 
-function loadIndex(){
-	var parameters = location.search.substring(1).split("&");
-	
-	if (parameters != null){
-		var temp = parameters[0].split("=");
-		document.getElementById("info").name = unescape(temp[0]);
-		document.getElementById("info").value = unescape(temp[1]);
-	}
-}
-
 function displayInfo(){
-	set_tick_labels();
+	//set_tick_labels();
 
 	var parameters = location.search.substring(1).split("&");
 	
@@ -82,8 +72,8 @@ function displayInfo(){
 
 function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
-	answers.rate.push(document.getElementById('rangeslider').value);
-	if (i >= 8){
+	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	if (i >= 29){
 		document.getElementById('next').style.display = 'none';
 		document.getElementById('end_survey').style.display = 'block';
 	}
