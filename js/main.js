@@ -74,8 +74,8 @@ function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
 	if (i >= 4){
-		document.getElementById('next').style.display = 'none';
-		document.getElementById('finish').style.display = 'block';
+		document.getElementById('next').hidden = true;
+		document.getElementById('finish').hidden = false;
 	}
 	document.querySelector('input[name="Options"]:checked').checked = false;
 	i = i+1;
