@@ -73,10 +73,11 @@ function displayInfo(){
 function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
-	if (i >= 29){
+	if (i >= 28){
 		document.getElementById('next').style.display = 'none';
 		document.getElementById('end_survey').style.display = 'block';
 	}
+	document.getElementByName('Options').removeAttr('checked');
 	i = i+1;
 	add_comment(i);
 }
