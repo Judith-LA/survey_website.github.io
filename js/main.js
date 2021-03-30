@@ -4,6 +4,8 @@ var comments;
 var index;
 var i=0;
 var answers = {id: [], rate: []};
+var startDate;
+var endDate;
 
 function toSurvey() {
  	location.replace("survey.html");
@@ -68,6 +70,8 @@ function displayInfo(){
 	    comments = data;
 	    add_comment(i);
 	});
+	
+	startDate = new Date();
 }
 
 function nextQuestion(){
@@ -83,14 +87,24 @@ function nextQuestion(){
 }
 
 function endSurvey(){
+	endDate = new Date();
+	
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	
 	sessionStorage.setItem("rates", JSON.stringify(answers));
 	location.href = "survey_end.html";
 }
 
 function loadRates(){
 	document.getElementById("rates").textContent = sessionStorage.getItem("rates");
+	
+	var surveyTime = endDate - startDate;
+	var hours = Math.floor((surveyTime)/36e5);
+	var minutes = Math.floor((surveyTime)%36e5/6e4);
+	var seconds = Math.floor((surveyTime)%6e4/1e3);
+
+	document.getElementById("survey_time").textContent = hours.toString()+':'+minutes.toString()+':'+seconds.toString();
 }
 
 
