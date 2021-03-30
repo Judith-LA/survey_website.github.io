@@ -116,7 +116,7 @@ function endSurvey(){
 		},
 	});
 	
-	location.href = "survey_end.html";
+	//location.href = "survey_end.html";
 }
 
 function loadRates(){
