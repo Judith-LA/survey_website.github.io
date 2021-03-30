@@ -13,12 +13,20 @@
 	
 	<script src="https://www.google.com/recaptcha/api.js?render=6LfnbZUaAAAAAOVG3D1gWBKpQBOdtE-1UF0yPsxU"></script>
 	<script>
-	    grecaptcha.ready(function() {
-	        grecaptcha.execute('6LfnbZUaAAAAAOVG3D1gWBKpQBOdtE-1UF0yPsxU', {action:'validate_captcha'})
-	                  .then(function(token) {
-	            document.getElementById('g-recaptcha-response').value = token;
-	        });
-	    });
+	grecaptcha.ready(function() {
+		grecaptcha.execute('6LfnbZUaAAAAAOVG3D1gWBKpQBOdtE-1UF0yPsxU', {action:'validate_captcha'})
+		.then(function(token) {
+			document.getElementById('g-recaptcha-response').value = token;
+			$.post("captcha.php",{token: token}, function(result) {
+				console.log(result);
+				if(result.success) {
+					alert('Thanks for posting comment.')
+				} else {
+					alert('You are spammer ! Get the @$%K out.')
+				}
+			});
+		});
+	});
 	</script>
 	
 </head>
