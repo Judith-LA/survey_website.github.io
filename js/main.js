@@ -103,13 +103,14 @@ function endSurvey(){
 	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
 	
 	sessionStorage.setItem("rates", JSON.stringify(answers));
+	sessionStorage.setItem("surveyTime", endDate - startDate);
 	location.href = "survey_end.html";
 }
 
 function loadRates(){
 	document.getElementById("rates").textContent = sessionStorage.getItem("rates");
 	
-	var surveyTime = endDate - startDate;
+	var surveyTime = sessionStorage.getItem("surveyTime");
 	var hours = Math.floor((surveyTime)/36e5);
 	var minutes = Math.floor((surveyTime)%36e5/6e4);
 	var seconds = Math.floor((surveyTime)%6e4/1e3);
