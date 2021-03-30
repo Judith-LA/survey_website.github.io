@@ -21,7 +21,7 @@ if (!$captcha) {
     //    console.log("Captcha error!");
     //}
 
-    if($responseKeys["success"]) {
+    if($response["success"]) {
         echo json_encode(array('success' => 'true'));
     } else {
         echo json_encode(array('success' => 'false'));
