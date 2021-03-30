@@ -74,8 +74,13 @@ function displayInfo(){
 	set_tick_labels();
 
 	var parameters = location.search.substring(1).split("&");
-	var temp = parameters[0].split("=");
-	var data_file = "standard_" + unescape(temp[1]) + ".json";
+	
+	if (parameters != ""){
+		var temp = parameters[0].split("=");
+		var data_file = "standard_" + unescape(temp[1]) + ".json";
+	} else {
+		var data_file = "standard_test.json";
+	}
 
 	$.getJSON(data_file).done(function(data) { 
 	    comments = data;
