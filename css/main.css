@@ -1,6 +1,7 @@
 body {
 	background-color:white;
-    text-align: center;
+	text-align: center;
+	margin: 5px 50px 5px;
 }
 
 form {
@@ -26,59 +27,59 @@ h2 {
 }
 
 #centre {
-    position: fixed;
-    left: 40%;
-    right: 40%;
-    top: 30%;
-    height: 160px;
-    border-style: groove;
-    border-color: #fab600;
-    border-radius: 5px;
-    padding: 1%;
+	position: fixed;
+	left: 40%;
+	right: 40%;
+	top: 30%;
+	height: 160px;
+	border-style: groove;
+	border-color: #fab600;
+	border-radius: 5px;
+	padding: 1%;
 }
 
 .box {
-    display: inline-block;
+	display: inline-block;
 }
 
 header {
-    color: white;
-    position: relative;
-    height: 120px;
-    background-color: #102645;
+	color: white;
+	position: relative;
+	height: 120px;
+	background-color: #102645;
 }
 
 .slider {
-    -webkit-appearance: none;
-    background: #FCF3CF;
-    width: 50%;
-    height: 20px;
-    opacity: 2;
+	-webkit-appearance: none;
+	background: #FCF3CF;
+	width: 50%;
+	height: 20px;
+	opacity: 2;
 }
 
 .slider:hover{
-    opacity: 1;
+	opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    cursor: pointer;
-    background: #34495E  ;
-    width: 5%;
-    height: 20px;
+	-webkit-appearance: none;
+	cursor: pointer;
+	background: #34495E  ;
+	width: 5%;
+	height: 20px;
 }
 
 
 .tick {
-    position: relative;
-    justify-content: center;
+	position: relative;
+	justify-content: center;
 }
 .tick::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    width: 1px;
-    background: gray;
-    height: 10px;
+	content: "";
+	position: absolute;
+	top: -10px;
+	width: 1px;
+	background: gray;
+	height: 10px;
 }
 
