@@ -15,10 +15,16 @@ if (!$captcha) {
     // use json_decode to extract json response
     $response = json_decode($response);
 
-    console.log($response->score)
+    //console.log($response->score)
 
-    if ($response->success === false) {
-        console.log("Captcha error!");
+    //if ($response->success === false) {
+    //    console.log("Captcha error!");
+    //}
+
+    if($responseKeys["success"]) {
+        echo json_encode(array('success' => 'true'));
+    } else {
+        echo json_encode(array('success' => 'false'));
     }
 }
 
