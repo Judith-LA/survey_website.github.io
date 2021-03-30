@@ -16,6 +16,16 @@ function toInstructions() {
 }
 
 
+function loadIndex(){
+    var parameters = location.search.substring(1).split("&");
+
+    if (parameters != ""){
+	    var temp = parameters[0].split("=");
+	    document.getElementById("info").name = unescape(temp[0]);
+	    document.getElementById("info").value = unescape(temp[1]);
+	}
+}
+
 function set_tick_labels() {
 
   var range = document.getElementById("slider");
