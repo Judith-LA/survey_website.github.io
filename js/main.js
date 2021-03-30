@@ -114,8 +114,10 @@ function endSurvey(){
 			var captcha = JSON.parse(result);
 			sessionStorage.setItem("score",captcha.score);
 		},
-		error: function(result){
+		error: function(result,textStatus,errorThrown){
 			console.log(result);
+			console.log(textStatus);
+			console.log(errorThrown);
 		}
 	});
 	
