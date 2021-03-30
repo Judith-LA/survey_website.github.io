@@ -114,6 +114,9 @@ function endSurvey(){
 			var captcha = JSON.parse(result);
 			sessionStorage.setItem("score",captcha.score);
 		},
+		error: function(result){
+			console.log(result);
+		}
 	});
 	
 	//location.href = "survey_end.html";
