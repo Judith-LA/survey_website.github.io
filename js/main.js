@@ -73,12 +73,24 @@ function displayInfo(){
 function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
-	if (i >= 28){
+	if (i >= 4){
 		document.getElementById('next').style.display = 'none';
-		document.getElementById('end_survey').style.display = 'block';
+		document.getElementById('finish').style.display = 'block';
 	}
 	document.querySelector('input[name="Options"]:checked').checked = false;
 	i = i+1;
 	add_comment(i);
 }
+
+function endSurvey(){
+	answers.id.push(document.getElementById('postid').value);
+	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	sessionStorage.setItem("rates", JSON.stringify(answers));
+	location.href = "survey_end.html";
+}
+
+function loadRates(){
+	document.getElementById("rates").textContent = sessionStorage.getItem("rates");
+}
+
 
