@@ -63,14 +63,6 @@ function loadIndex(){
 }
 
 function displayInfo(){
-	rangeslider = document.getElementById("rangeslider");
-	output = document.getElementById("demo");
-	output.innerHTML = rangeslider.value;
-
-	rangeslider.oninput = function getSliderValue() {
-		output.innerHTML = this.value;
-	}
-
 	set_tick_labels();
 
 	var parameters = location.search.substring(1).split("&");
