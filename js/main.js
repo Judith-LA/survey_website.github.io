@@ -20,7 +20,7 @@ function set_tick_labels() {
   
   var ticks = document.getElementById("ticks");
   
-  var array = ["Very negative", "Negative", "Neutral", "Positive", "Very positive"]
+  var array = ["Negativ", "Eher negativ", "Neutral", "Eher positiv", "Positiv"]
 
   array.forEach(function (item, index) {
   		var span = document.createElement("SPAN");
