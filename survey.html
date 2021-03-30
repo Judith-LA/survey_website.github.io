@@ -16,7 +16,7 @@
 	grecaptcha.ready(function() {
 		grecaptcha.execute('6LfnbZUaAAAAAOVG3D1gWBKpQBOdtE-1UF0yPsxU', {action:'validate_captcha'})
 		.then(function(token) {
-			document.getElementById('g-recaptcha-response').value = token;
+			document.getElementById('recaptchaResponse').value = token;
 		});
 	});
 	</script>
@@ -67,10 +67,8 @@
 
 	<div class="down">
 		<button id="next" onclick="nextQuestion()"> Nächster </button>
-		<form id="form_id" method="post" action="captcha.php">
-				<button id="finish" type="submit" hidden="True"> Finish </button>
-				<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-		</form>
+		<button id="finish" onclick="endSurvey()" hidden="True"> Ende </button>
+		<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 	</div>
 	
 	
