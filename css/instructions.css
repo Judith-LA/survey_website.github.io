@@ -29,3 +29,22 @@ h2{
 form {
 	text-align: center;
 }
+
+.button {
+  background-color: #102645;
+  color: #fab600;
+  border: 2px solid #102645;
+  border-radius: 8%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 40px;
+  transition-duration: 0.5s;
+}
+
+.button:hover{
+  background-color: white;
+  color: #102645;
+}
+
