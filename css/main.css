@@ -65,7 +65,6 @@ header {
 .likert:before {
   content: '';
   position:relative;
-  top:37px;
   left:19%;
   display:block;
   background-color:#efefef;
