@@ -99,6 +99,7 @@ header {
 .progress-bar-back{
   height: 24px;
   background-color: #D8D8D8;
+  width: 100%;
 }
 
 .progress-bar-front{
