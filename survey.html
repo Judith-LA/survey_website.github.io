@@ -41,7 +41,7 @@
 	
 	<input type="hidden" id="postid">
 	<p id="title"></p>
-	<p id="text"></p>
+	<div class="text"><p id="text"></p></div>
 	
 	<ul class='likert'>
 		<li>
@@ -66,13 +66,13 @@
 		</li>
 	</ul>
 	
-</div>
-		
-
-<div class="down">
-	<button class="button" id="next" onclick="nextQuestion()"> Nächster </button>
-	<button id="finish" onclick="endSurvey()" hidden="True"> Ende </button>
-	<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+	
+	<div class="down">
+		<button class="button" id="next" onclick="nextQuestion()"> Nächster </button>
+		<button id="finish" onclick="endSurvey()" hidden="True"> Ende </button>
+		<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+	</div>
+	
 </div>
 	
 </body>
