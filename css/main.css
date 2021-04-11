@@ -104,7 +104,7 @@ header {
 .progress-bar-front{
   height: 24px;
   background-color: #fab600;
-  width: 10%;
+  width: 1/31*100 %;
 }
 
 
