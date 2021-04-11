@@ -81,6 +81,9 @@ function displayInfo(){
 	    add_comment(i);
 	});
 	
+	var bar = document.getElementById("progress-bar");
+	bar.style.width = (i+1)/31*100 +'%';
+	
 	startDate = new Date();
 }
 
