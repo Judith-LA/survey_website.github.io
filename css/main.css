@@ -36,10 +36,8 @@ header {
 	background-color: #102645;
 }
 
-.down{
-	display: flex;
-    	justify-content: center;
-    	align-items: center;
+.text{
+	height: 45%;
 }
 
 
