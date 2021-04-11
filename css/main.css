@@ -96,5 +96,17 @@ header {
 }
 
 
+.progress-bar-back{
+  height: 24px;
+  background-color: #D8D8D8;
+}
+
+.progress-bar-front{
+  height: 24px;
+  background-color: #fab600;
+  width: 10%;
+}
+
+
 
 
