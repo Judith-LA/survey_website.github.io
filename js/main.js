@@ -90,6 +90,7 @@ function displayInfo(){
 function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
 	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	/* test: i_max=2; reality: i_max=28 */
 	if (i >= 2){
 		document.getElementById('next').classList.remove('button');
 		document.getElementById('next').hidden = true;
