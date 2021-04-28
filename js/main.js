@@ -89,7 +89,11 @@ function displayInfo(){
 
 function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
-	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	if (document.getElementById('dontUnderstand').checked){
+		answers.rate.push('NA');
+	} else {
+		answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	}
 	/* test: i_max=2; reality: i_max=28 */
 	if (i >= 2){
 		document.getElementById('next').classList.remove('button');
