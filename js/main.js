@@ -114,7 +114,11 @@ function endSurvey(){
 	endDate = new Date();
 	
 	answers.id.push(document.getElementById('postid').value);
-	answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	if (document.getElementById('dontUnderstand').checked){
+		answers.rate.push('NA');
+	} else {
+		answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+	}
 	
 	sessionStorage.setItem("rates", JSON.stringify(answers));
 	sessionStorage.setItem("surveyTime", (endDate - startDate)/1e3);
