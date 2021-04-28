@@ -91,8 +91,10 @@ function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
 	if (document.getElementById('dontUnderstand').checked){
 		answers.rate.push('NA');
+		document.getElementById('dontUnderstand').checked = false;
 	} else {
 		answers.rate.push(document.querySelector('input[name="Options"]:checked').value);
+		document.querySelector('input[name="Options"]:checked').checked = false;
 	}
 	/* test: i_max=2; reality: i_max=28 */
 	if (i >= 2){
@@ -101,7 +103,7 @@ function nextQuestion(){
 		document.getElementById('finish').classList.add('button');
 		document.getElementById('finish').hidden = false;
 	}
-	document.querySelector('input[name="Options"]:checked').checked = false;
+	
 	i = i+1;
 	add_comment(i);
 	var bar = document.getElementById("progress-bar");
