@@ -143,7 +143,7 @@ function endSurvey(){
 		}
 	});
 	
-	location.href = "survey_end_local.html";
+	location.href = "survey_end.html";
 }
 
 function loadRates(){
