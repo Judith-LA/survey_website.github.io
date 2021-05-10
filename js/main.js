@@ -165,6 +165,7 @@ function showResults(){
 	document.getElementById("lastQuestions").hidden = true;
 
 	document.getElementById("gender").textContent = document.querySelector('input[name="gender"]:checked').value;
+	document.getElementById("age").textContent = document.getElementByName('age').value;
 	document.getElementById("politics").textContent = document.querySelector('input[name="politics"]:checked').value;
 
 	document.getElementById("results").hidden = false;
@@ -176,6 +177,7 @@ function sendResults(){
 	document.getElementById("lastQuestions").hidden = true;
 
 	document.getElementById("gender").textContent = document.querySelector('input[name="gender"]:checked').value;
+	document.getElementById("age").textContent = document.getElementByName('age').value;
 	document.getElementById("politics").textContent = document.querySelector('input[name="politics"]:checked').value;
 
 	document.getElementById("Thanks").hidden = false;
