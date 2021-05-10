@@ -167,3 +167,15 @@ function showResults(){
 
 }
 
+
+function sendResults(){
+	document.getElementById("lastQuestions").hidden = true;
+
+	document.getElementById("gender").textContent = document.querySelector('input[name="gender"]:checked').value;
+	document.getElementById("politics").textContent = document.querySelector('input[name="politics"]:checked').value;
+
+	document.getElementById("thanks").hidden = false;
+}
+
+
+
