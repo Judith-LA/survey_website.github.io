@@ -3,7 +3,7 @@ var output;
 var comments;
 var index;
 var i=0;
-var answers = {id: [], rate: []};
+var answers = {id: [], type: [], rate: []};
 var startDate;
 var endDate;
 
@@ -49,10 +49,12 @@ function add_comment(i){
 	index = Object.keys(comments.postid);
 	
 	var comment_id = document.getElementById("postid");
+	var comment_type = document.getElementById("type");
 	var comment_title = document.getElementById("title");
 	var comment_text = document.getElementById("text");
 
 	comment_id.value = comments.postid[index[i]];
+	comment_type.value = comments["type"][index[i]];
 
 	var title = comments["title"][index[i]];
 	if (title==null){
@@ -89,6 +91,7 @@ function displayInfo(){
 
 function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
+	answers.type.puch(document.getElementById('type').value);
 	if (document.getElementById('dontUnderstand').checked){
 		answers.rate.push('NA');
 		document.getElementById('dontUnderstand').checked = false;
@@ -114,6 +117,7 @@ function endSurvey(){
 	endDate = new Date();
 	
 	answers.id.push(document.getElementById('postid').value);
+	answers.type.puch(document.getElementById('type').value);
 	if (document.getElementById('dontUnderstand').checked){
 		answers.rate.push('NA');
 	} else {
@@ -139,7 +143,7 @@ function endSurvey(){
 		}
 	});
 	
-	location.href = "survey_end.html";
+	location.href = "survey_end_local.html";
 }
 
 function loadRates(){
