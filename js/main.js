@@ -91,7 +91,7 @@ function displayInfo(){
 
 function nextQuestion(){
 	answers.id.push(document.getElementById('postid').value);
-	answers.type.puch(document.getElementById('type').value);
+	answers.type.push(document.getElementById('type').value);
 	if (document.getElementById('dontUnderstand').checked){
 		answers.rate.push('NA');
 		document.getElementById('dontUnderstand').checked = false;
@@ -117,7 +117,7 @@ function endSurvey(){
 	endDate = new Date();
 	
 	answers.id.push(document.getElementById('postid').value);
-	answers.type.puch(document.getElementById('type').value);
+	answers.type.push(document.getElementById('type').value);
 	if (document.getElementById('dontUnderstand').checked){
 		answers.rate.push('NA');
 	} else {
