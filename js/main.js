@@ -82,6 +82,9 @@ function add_comment(i){
 
 function displayInfo(){
 	//set_tick_labels();
+	
+	document.getElementById("Instructions").hidden = true;
+	document.getElementById("survey").hidden = false;
 
 	var parameters = location.search.substring(1).split("&");
 	
@@ -157,7 +160,9 @@ function endSurvey(){
 		}
 	});
 	
-	location.href = "survey_end.html";
+	//location.href = "survey_end.html";
+	document.getElementById("survey").hidden = true;
+	document.getElementById("endSurvey").hidden = true;
 }
 
 function loadRates(){
@@ -169,7 +174,6 @@ function loadRates(){
 	var seconds = Math.floor((surveyTime)%60);
 
 	document.getElementById("survey_time").textContent = hours.toString()+':'+minutes.toString()+':'+seconds.toString();
-	
 	
 	document.getElementById("score").textContent = sessionStorage.getItem("score");
 }
