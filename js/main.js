@@ -35,7 +35,7 @@ function loadIndex(){
 	
     $.getJSON("config.json").done(function(data) {
 	config = data;
-    }
+    });
 
 
 }
