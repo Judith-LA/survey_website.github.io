@@ -163,7 +163,8 @@ function endSurvey(){
 	
 	//location.href = "survey_end.html";
 	document.getElementById("survey").hidden = true;
-	document.getElementById("endSurvey").hidden = true;
+	loadRates();
+	document.getElementById("endSurvey").hidden = false;
 }
 
 function loadRates(){
