@@ -204,10 +204,10 @@ function sendResults(){
 	document.getElementById("age").textContent = document.getElementsByName('age')[0].value;
 	document.getElementById("politics").textContent = document.querySelector('input[name="politics"]:checked').value;
 	
-	var form = document.getElementById("submit-form");
-	form.attr("action", submitUrl); 
-    	form.attr("method", "POST"); 
-    	form.submit();
+	//var form = document.getElementById("submit-form");
+	$("#submit-form".attr("action", submitUrl); 
+    	$("#submit-form".attr("method", "POST"); 
+    	$("#submit-form".submit();
 
 	document.getElementById("Thanks").hidden = false;
 }
