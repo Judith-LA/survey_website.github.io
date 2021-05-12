@@ -1,9 +1,17 @@
+const MTURK_SUBMIT = "https://www.mturk.com/mturk/externalSubmit";
+const SANDBOX_SUBMIT = "https://workersandbox.mturk.com/mturk/externalSubmit";
+
+var config = {}
 var rangeslider;
 var output;
 var comments;
 var index;
 var i=0;
-var answers = {id: [], type: [], rate: []};
+var answers = {id: [],
+	       type: [], 
+	       rate: [],
+	       assignmentId: gup("assignmentId"),
+	       workerId: gup("workerId")};
 var startDate;
 var endDate;
 
@@ -20,10 +28,16 @@ function loadIndex(){
     var parameters = location.search.substring(1).split("&");
 
     if (parameters != ""){
-	    var temp = parameters[0].split("=");
-	    document.getElementById("info").name = unescape(temp[0]);
-	    document.getElementById("info").value = unescape(temp[1]);
-	}
+	var temp = parameters[0].split("=");
+	document.getElementById("info").name = unescape(temp[0]);
+	document.getElementById("info").value = unescape(temp[1]);
+    }
+	
+    $.getJSON("config.json").done(function(data) {
+	config = data;
+    }
+
+
 }
 
 function set_tick_labels() {
@@ -175,13 +189,29 @@ function showResults(){
 
 function sendResults(){
 	document.getElementById("lastQuestions").hidden = true;
-
+	
+	var submitUrl = config.hitCreation.production ? MTURK_SUBMIT : SANDBOX_SUBMIT;
+	
+	document.getElementById("assignmentId").textContent = answers.assignmentId;
+	document.getElementById("workerId").textContent = answers.workerId;
 	document.getElementById("gender").textContent = document.querySelector('input[name="gender"]:checked').value;
 	document.getElementById("age").textContent = document.getElementsByName('age')[0].value;
 	document.getElementById("politics").textContent = document.querySelector('input[name="politics"]:checked').value;
+	
+	var form = document.getElementById("submit-form");
+	form.attr("action", submitUrl); 
+    	form.attr("method", "POST"); 
+    	form.submit();
 
 	document.getElementById("Thanks").hidden = false;
 }
 
-
+function gup(name) {
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var tmpURL = window.location.href;
+    var results = regex.exec( tmpURL );
+    if (results == null) return "";
+    else return results[1];
+}
 
