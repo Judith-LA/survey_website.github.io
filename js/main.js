@@ -145,7 +145,7 @@ function endSurvey(){
 	sessionStorage.setItem("rates", JSON.stringify(answers));
 	sessionStorage.setItem("surveyTime", (endDate - startDate)/1e3);
 	
-	var token = document.getElementById('recaptchaResponse').value;
+	/*var token = document.getElementById('recaptchaResponse').value;
 	$.ajax({
 		url: "captcha.php",
 		type: "POST",
@@ -159,7 +159,7 @@ function endSurvey(){
 			console.log(textStatus);
 			console.log(errorThrown);
 		}
-	});
+	});*/
 	
 	//location.href = "survey_end.html";
 	document.getElementById("survey").hidden = true;
