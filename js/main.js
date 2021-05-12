@@ -25,18 +25,17 @@ function toInstructions() {
 
 
 function loadIndex(){
-    var parameters = location.search.substring(1).split("&");
+    /*var parameters = location.search.substring(1).split("&");
 
     if (parameters != ""){
 	var temp = parameters[0].split("=");
 	document.getElementById("info").name = unescape(temp[0]);
 	document.getElementById("info").value = unescape(temp[1]);
-    }
+    }*/
 	
     $.getJSON("config.json").done(function(data) {
 	config = data;
     });
-
 
 }
 
@@ -86,14 +85,16 @@ function displayInfo(){
 	document.getElementById("Instructions").hidden = true;
 	document.getElementById("survey").hidden = false;
 
-	var parameters = location.search.substring(1).split("&");
+	/*var parameters = location.search.substring(1).split("&");
 	
 	if (parameters != ""){
 		var temp = parameters[0].split("=");
 		var data_file = "survey_" + unescape(temp[1]) + ".json";
 	} else {
 		var data_file = "survey_test.json";
-	}
+	}*/
+	
+	var data_file = "survey_test.json";
 
 	$.getJSON(data_file).done(function(data) { 
 	    comments = data;
