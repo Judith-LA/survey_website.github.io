@@ -205,9 +205,9 @@ function sendResults(){
 	document.getElementById("politics").textContent = document.querySelector('input[name="politics"]:checked').value;
 	
 	//var form = document.getElementById("submit-form");
-	$("#submit-form".attr("action", submitUrl); 
-    	$("#submit-form".attr("method", "POST"); 
-    	$("#submit-form".submit();
+	$("#submit-form").attr("action", submitUrl); 
+    	$("#submit-form").attr("method", "POST"); 
+    	$("#submit-form").submit();
 
 	document.getElementById("Thanks").hidden = false;
 }
